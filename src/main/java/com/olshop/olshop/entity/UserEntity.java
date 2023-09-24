@@ -21,6 +21,8 @@ public class UserEntity {
     private int id;
     @Column(name = "username")
     private String username;
+    @Column(name = "email")
+    private String email;
     @Column(name = "phone_number")
     private String phoneNumber;
     @Column(name = "roles")
