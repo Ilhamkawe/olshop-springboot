@@ -23,4 +23,8 @@
         <addForeignKeyConstraint baseTableName="transaction_details" baseColumnNames="transaction_id" constraintName="FK_TRANSACTION" referencedTableName="transactions"
                                  referencedColumnNames="id"/>
     </changeSet>
+    
+    <changeSet id="ALTER_TABLE_DROP_COLUMN_USER_ID" author="kawe">
+        <dropColumn tableName="transaction_details" columnName="user_id"/>
+    </changeSet>
 </databaseChangeLog>
