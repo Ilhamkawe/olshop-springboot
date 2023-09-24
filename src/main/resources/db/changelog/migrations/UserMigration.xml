@@ -21,4 +21,14 @@
             <column name="deleted_at" type="TIMESTAMP"/>
         </createTable>
     </changeSet>
+
+    <changeSet id="ALTER_TABLE_ADD_COLUMN_EMAIL" author="kawe">
+
+        <addColumn tableName="users">
+            <column name="email" type="VARCHAR(255)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>
