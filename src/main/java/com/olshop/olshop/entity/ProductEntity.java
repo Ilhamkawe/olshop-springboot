@@ -34,10 +34,10 @@ public class ProductEntity {
     private String tag;
 
     @Column(name = "category_id")
-    private String categoryId;
+    private int categoryId;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id",insertable = false, updatable = false)
     private CategoryEntity category;
 
     @Column(name = "deleted_at")
