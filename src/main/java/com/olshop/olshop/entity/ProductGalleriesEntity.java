@@ -21,6 +21,7 @@ public class ProductGalleriesEntity {
 
     @Column(name = "product_id")
     private int productID;
+
     @ManyToOne
     @JoinColumn(name = "product_id",insertable = false, updatable = false)
     private ProductEntity product;
