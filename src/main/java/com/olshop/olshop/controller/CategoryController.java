@@ -2,6 +2,7 @@ package com.olshop.olshop.controller;
 
 import com.olshop.olshop.dto.params.CategoryParams;
 import com.olshop.olshop.dto.resbody.common.BaseResponse;
+import com.olshop.olshop.entity.CategoryEntity;
 import com.olshop.olshop.service.CategoryService;
 import com.olshop.olshop.util.ApiResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class CategoryController {
     }
     @GetMapping("/category")
     public @ResponseBody ResponseEntity<BaseResponse<?>> index(@RequestParam(name = "id", defaultValue = "0",required = false) Integer id,
-                                                               @RequestParam(name = "name", required = false) String name,
+                                                               @RequestParam(name = "name", defaultValue = "", required = false) String name,
                                                                @RequestParam(name = "page", defaultValue = "0",required = false) Integer page,
                                                                @RequestParam(name = "limit",defaultValue = "6", required = false) Integer limit,
                                                                @RequestParam(name = "show_product", defaultValue = "0",required = false) Integer showProduct
