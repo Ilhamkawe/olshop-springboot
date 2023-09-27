@@ -10,12 +10,13 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "products")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductEntity {
+    private static final long serialVersionUID = -2343243243242432341L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -33,11 +34,11 @@ public class ProductEntity {
     @Column(name = "tags")
     private String tag;
 
-    @Column(name = "category_id")
-    private int categoryId;
+//    @Column(name = "category_id")
+//    private int categoryId;
 
     @ManyToOne
-    @JoinColumn(name = "category_id",insertable = false, updatable = false)
+    @JoinColumn(name = "category_id")
     private CategoryEntity category;
 
     @Column(name = "deleted_at")

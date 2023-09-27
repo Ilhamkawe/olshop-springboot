@@ -4,8 +4,8 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
     <!--    migration  -->
-    <include file="classpath:/db/changelog/migrations/UserMigration.xml"/>
     <include file="classpath:/db/changelog/migrations/CattegoryMigration.xml"/>
+    <include file="classpath:/db/changelog/migrations/UserMigration.xml"/>
     <include file="classpath:/db/changelog/migrations/ProductMigration.xml"/>
     <include file="classpath:/db/changelog/migrations/ProductGalleryMigration.xml"/>
     <include file="classpath:/db/changelog/migrations/TransactionMigration.xml"/>
