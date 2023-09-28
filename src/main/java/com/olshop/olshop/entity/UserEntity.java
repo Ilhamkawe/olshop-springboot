@@ -1,5 +1,6 @@
 package com.olshop.olshop.entity;
 
+import com.olshop.olshop.enumerate.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,8 +27,9 @@ public class UserEntity {
     private String email;
     @Column(name = "phone_number")
     private String phoneNumber;
-    @Column(name = "roles")
-    private String role;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private UserRole role;
     @Column(name = "password")
     private String password;
     @Column(name = "deleted_at")
