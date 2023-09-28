@@ -31,6 +31,9 @@
         </addColumn>
     </changeSet>
 
+    <changeSet id="ALTER_TABLE_CHANGE_TYPE_ROLE" author="kawe">
+        <modifyDataType tableName="users" columnName="role" newDataType="VARCHAR(255)"/>
+    </changeSet>
 
 
 </databaseChangeLog>

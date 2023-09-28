@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
             user.setPassword(req.getPassword());
             user.setPhoneNumber(req.getPhoneNumber());
             user.setUsername(req.getUsername());
-            user.setRole(UserRole.USER);
+            user.setRole(req.getRole());
 
             user = userRepository.save(user);
             return user;
