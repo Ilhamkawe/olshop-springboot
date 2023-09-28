@@ -32,6 +32,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/api/v1/engine/auth/**").permitAll()
                         .requestMatchers("/api/v1/engine/product/**").permitAll()
+                        .requestMatchers("/api/v1/engine/products").permitAll()
+                        .requestMatchers("/api/v1/engine/transactions").permitAll()
                         .requestMatchers("").permitAll()
                         .anyRequest()
                         .authenticated())

@@ -1,6 +1,8 @@
 package com.olshop.olshop.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "transactions")
@@ -30,6 +33,10 @@ public class TransactionEntity {
 
     @Column(name = "address")
     private String address;
+
+    @OneToMany(mappedBy = "transaction",orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("transaction")
+    private List<TransactionDetailsEntity> transactionDetails;
 
     @Column(name = "payment_method")
     private String paymentMethod;

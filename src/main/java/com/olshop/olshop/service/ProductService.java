@@ -1,5 +1,7 @@
 package com.olshop.olshop.service;
 
-public interface ProductService {
+import com.olshop.olshop.dto.params.ProductParams;
 
+public interface ProductService {
+    Object index(ProductParams params);
 }
