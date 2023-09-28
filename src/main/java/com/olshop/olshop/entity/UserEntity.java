@@ -28,7 +28,7 @@ public class UserEntity {
     @Column(name = "phone_number")
     private String phoneNumber;
     @Enumerated(EnumType.STRING)
-    @Column(name = "role")
+    @Column(name="role")
     private UserRole role;
     @Column(name = "password")
     private String password;
