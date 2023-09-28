@@ -14,7 +14,7 @@
             <column name="phone_number" type="VARCHAR(255)">
                 <constraints unique="true" nullable="false"/>
             </column>
-            <column name="roles" type="roleEnum"/>
+            <column name="role" type="roleEnum"/>
             <column name="password" type="varchar(255)"/>
             <column name="created_at" type="TIMESTAMP"/>
             <column name="updated_at" type="TIMESTAMP"/>
@@ -30,5 +30,7 @@
             </column>
         </addColumn>
     </changeSet>
+
+
 
 </databaseChangeLog>

@@ -3,9 +3,9 @@ package com.olshop.olshop.service.impl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.olshop.olshop.dto.params.CategoryParams;
-import com.olshop.olshop.dto.reqbody.category.CategoryReqBody;
+
 import com.olshop.olshop.dto.resbody.category.CategoryResBody;
-import com.olshop.olshop.entity.CategoryEntity;
+
 import com.olshop.olshop.repository.CategoryRepository;
 import com.olshop.olshop.service.CategoryService;
 import jakarta.transaction.Transactional;
@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 @Transactional
