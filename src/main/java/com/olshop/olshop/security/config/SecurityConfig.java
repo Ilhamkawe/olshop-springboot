@@ -34,6 +34,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/engine/user/auth/**").permitAll()
                         .requestMatchers("/api/v1/engine/products").permitAll()
                         .requestMatchers("/api/v1/engine/transactions").permitAll()
+                        .requestMatchers("/api/v1/engine/auth/**").permitAll()
                         .requestMatchers("").permitAll()
                         .anyRequest()
                         .authenticated())
