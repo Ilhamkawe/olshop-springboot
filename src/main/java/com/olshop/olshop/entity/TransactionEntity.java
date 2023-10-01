@@ -26,7 +26,7 @@ public class TransactionEntity {
     private int id;
 
     @Column(name = "user_id")
-    private int userID;
+    private int userId;
     @ManyToOne
     @JoinColumn(name = "user_id",insertable = false, updatable = false)
     private UserEntity user;

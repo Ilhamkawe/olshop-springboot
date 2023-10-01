@@ -38,7 +38,7 @@ public class CategoryController {
         try {
             Object category = categoryService.index(params);
 
-            return ApiResponseUtil.SuccessHandler("test", "Berhasil mengambil data");
+            return ApiResponseUtil.SuccessHandler(category, "Berhasil mengambil data");
         }catch (Exception e) {
             return ApiResponseUtil.ErrorHandler(e, HttpStatus.NOT_FOUND, "GAGAL mengambil data");
         }
