@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 
         Boolean isPhoneNumber = userRepository.isPhoneExist(req.getPhoneNumber());
         if (isPhoneNumber) {
-            return new ResMessageDTO("Email sudah digunakan");
+            return new ResMessageDTO("No Telp sudah digunakan");
         }
 
         req.setPassword(PasswordEncoderUtil.EncodePassword(req.getPassword()));

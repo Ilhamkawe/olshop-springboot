@@ -18,13 +18,5 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/auth/register")
-    public @ResponseBody ResponseEntity<BaseResponse<?>> register(@Validated @RequestBody RegisterReqBody req){
-        try {
-            Object user = userService.register(req);
-            return ApiResponseUtil.SuccessHandler(user, "SUKSES");
-        }catch (Exception e){
-            return ApiResponseUtil.ErrorHandler(e, HttpStatus.NOT_FOUND, "GAGAL");
-        }
-    }
+
 }
