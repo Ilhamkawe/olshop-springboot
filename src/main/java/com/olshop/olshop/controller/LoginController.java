@@ -28,6 +28,7 @@ public class LoginController {
     public @ResponseBody ResponseEntity<BaseResponse<?>> login(@Validated @RequestBody LoginReqBody req){
         try {
             Object data = authService.LoginUser(req);
+            System.out.println("Kawee"+ data);
             return ApiResponseUtil.SuccessHandler(data, "BERHASIL");
         }catch(Exception e){
             return ApiResponseUtil.ErrorHandler(e, HttpStatus.NOT_FOUND, "Gagal");
