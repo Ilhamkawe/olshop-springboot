@@ -15,4 +15,5 @@ public class UserDTO {
     String username;
     String password;
     String phoneNumber;
+    String token;
 }

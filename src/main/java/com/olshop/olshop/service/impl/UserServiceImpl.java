@@ -10,6 +10,7 @@ import com.olshop.olshop.entity.UserEntity;
 import com.olshop.olshop.repository.UserRepository;
 import com.olshop.olshop.service.UserService;
 import com.olshop.olshop.util.PasswordEncoderUtil;
+import com.olshop.olshop.util.JwtAuthUtil;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -71,8 +72,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getUserDtoByEmail(String email){
         UserEntity user = userRepository.getUserByEmail(email);
-        return objectMapper.convertValue(user, new TypeReference<UserDTO>(){
+        UserDTO res =  objectMapper.convertValue(user, new TypeReference<UserDTO> () {
         });
+        return res;
     }
 
     @Override
