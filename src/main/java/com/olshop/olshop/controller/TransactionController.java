@@ -27,6 +27,7 @@ public class TransactionController {
     ){
 
         Object securityContext = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        System.out.println("DATA SECURITY CONTEXT"+ securityContext)
         UserEntity authUser = (UserEntity) securityContext;
 
         TransactionParams params = new TransactionParams(id, limit, authUser.getId(), status);

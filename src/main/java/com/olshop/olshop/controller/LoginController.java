@@ -1,6 +1,7 @@
 package com.olshop.olshop.controller;
 
 import com.olshop.olshop.dto.reqbody.user.LoginReqBody;
+import com.olshop.olshop.dto.reqbody.user.RegisterReqBody;
 import com.olshop.olshop.dto.resbody.common.BaseResponse;
 import com.olshop.olshop.service.AuthService;
 import com.olshop.olshop.service.UserService;
@@ -27,9 +28,21 @@ public class LoginController {
     public @ResponseBody ResponseEntity<BaseResponse<?>> login(@Validated @RequestBody LoginReqBody req){
         try {
             Object data = authService.LoginUser(req);
+            System.out.println("CEK DATA"+ data);
             return ApiResponseUtil.SuccessHandler(data, "BERHASIL");
         }catch(Exception e){
             return ApiResponseUtil.ErrorHandler(e, HttpStatus.NOT_FOUND, "Gagal");
+        }
+    }
+
+    @PostMapping("/register")
+    public @ResponseBody ResponseEntity<BaseResponse<?>> register(@Validated @RequestBody RegisterReqBody req){
+        try {
+            Object user = userService.register(req);
+            System.out.println("CEK USER"+ user)
+            return ApiResponseUtil.SuccessHandler(user, "SUKSES");
+        }catch (Exception e){
+            return ApiResponseUtil.ErrorHandler(e, HttpStatus.NOT_FOUND, "GAGAL");
         }
     }
 }

@@ -33,6 +33,7 @@ public class ProductController {
 //
         try {
             Object product = productService.index(params);
+            System.out.println("DATA PRODUCT"+ product)
             return ApiResponseUtil.SuccessHandler(product, "Berhasil mengambil data");
         }catch (Exception e) {
             return ApiResponseUtil.ErrorHandler(e, HttpStatus.NOT_FOUND, "GAGAL mengambil data");

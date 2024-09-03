@@ -12,6 +12,6 @@ import lombok.Setter;
 public class TransactionParams {
     private int id;
     private int limit;
-    private int userId;
+    private int userID;
     private String status;
 }

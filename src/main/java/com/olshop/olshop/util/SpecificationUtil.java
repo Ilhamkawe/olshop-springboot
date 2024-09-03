@@ -12,10 +12,11 @@ import org.springframework.data.jpa.domain.Specification;
 public class SpecificationUtil {
 
     public static Specification<TransactionEntity> buildTransactionSpecification(TransactionParams params) {
+
         return (root, query, criteriaBuilder) -> {
             Predicate predicate = criteriaBuilder.conjunction();
 
-            predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("userId"), params.getUserId() ));
+            predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("userId"), params.getUserID() ));
 
             if (params.getId() != 0) {
                 predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("id"), params.getId() ));
